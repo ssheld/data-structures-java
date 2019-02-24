@@ -1,7 +1,5 @@
 package com.ssheld.MyArrayList;
 
-import com.sun.org.apache.xalan.internal.xsltc.dom.ArrayNodeListIterator;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -24,8 +22,8 @@ public class MyArrayList<T> implements Iterable<T> {
 
     /* Get value at index */
     public T get(int index) {
-        if(index < 0 || index >= ()) {
-            throw new ArrayIndexOutOfBoundsException;
+        if(index < 0 || index >= getSize()) {
+            throw new ArrayIndexOutOfBoundsException();
         }
         return arr[index];
     }
@@ -40,10 +38,25 @@ public class MyArrayList<T> implements Iterable<T> {
         return oldValue;
     }
 
-    /* Item value to array */
+    /* Item value to end of array */
     public boolean add(T value) {
-        if(value.)
+        add(getSize(), value);
+        return true;
+    }
 
+    /* Overload add method to add value at specific index */
+    public void add(int index, T value) {
+        if(arr.length == getSize()) {
+            /* We need to double the capacity */
+            changeCapacity(getSize() * 2 + 1);
+        }
+        /* Copy items over */
+        for(int i = getSize(); i > index; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[index] = value;
+
+        arraySize++;
     }
 
     /* Clear all values from the array */
@@ -84,7 +97,6 @@ public class MyArrayList<T> implements Iterable<T> {
         for(int i = index; i < getSize()-1; i++) {
             arr[i] = arr[i+1];
         }
-
         arraySize--;
         return removedItem;
     }
