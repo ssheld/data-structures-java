@@ -47,7 +47,7 @@ public class DynamicArrayStack<T> implements Iterable<T> {
         // and situation where we pop and then immediately have to call resize
         // in our next push
         if (n > 0 && n == myStack.length/4) {
-            resize(size()/2);
+            resize(myStack.length/2);
         }
         return item;
     }
@@ -55,7 +55,7 @@ public class DynamicArrayStack<T> implements Iterable<T> {
     // Resize the stack if user tries to add item and stack is at full capacity
     private void resize(int max) {
         T[] temp = (T[]) new Object[max];
-        for (int i = 0; i < myStack.length; i++) {
+        for (int i = 0; i < n; i++) {
             temp[i] = myStack[i];
         }
         myStack = temp;
