@@ -101,3 +101,5 @@ fabric.properties
 data-structures-java.iml
 **.iml
 
+# Ignore all target dirs
+*/target
