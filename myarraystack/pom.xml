@@ -5,14 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ssheld</groupId>
-    <artifactId>myarraylist</artifactId>
+    <artifactId>myarraystack</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
 
     <dependencies>
         <dependency>

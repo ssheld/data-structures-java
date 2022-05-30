@@ -1,5 +1,3 @@
-package test.java.ssheld;
-
 import com.ssheld.MyArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
