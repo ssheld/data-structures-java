@@ -69,4 +69,20 @@ public class MyArrayStackTest {
 
         assertEquals(11, arr.getSize());
     }
+
+    @Test
+    void testStackIterator() {
+        arr.push(0);
+        arr.push(1);
+        arr.push(2);
+        arr.push(3);
+        arr.push(4);
+        arr.push(5);
+
+        int i = 5;
+
+        for (int val: arr) {
+            assertEquals(i--, val);
+        }
+    }
 }
