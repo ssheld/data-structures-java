@@ -8,38 +8,38 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class MyListStackTest {
 
 
-    private MyListStack<Integer> arr;
+    private MyListStack<Integer> stack;
 
     @BeforeEach
     void setup() {
-        arr = new MyListStack<>();
+        stack = new MyListStack<>();
     }
 
     @Test
     void getTopOfStack() {
-        arr.push(3);
-        arr.push(5);
-        arr.push(2);
+        stack.push(3);
+        stack.push(5);
+        stack.push(2);
 
 
-        assertEquals(2, arr.pop());
-        assertEquals(5, arr.pop());
-        assertEquals(1, arr.getSize());
+        assertEquals(2, stack.pop());
+        assertEquals(5, stack.pop());
+        assertEquals(1, stack.getSize());
     }
 
     @Test
     void getSizeAccuratelyKeepsCurrentSizeOfArrayAsItemsAreAdded() {
-        arr.push(2);
-        arr.push(4);
+        stack.push(2);
+        stack.push(4);
 
-        assertEquals(2, arr.getSize());
+        assertEquals(2, stack.getSize());
     }
 
     @Test
     void isEmptySuccessfullyChecksIfArrayIsEmptyAfterAddingItems() {
-        arr.push(4);
-        arr.push(5);
+        stack.push(4);
+        stack.push(5);
 
-        assertFalse(arr.isEmpty());
+        assertFalse(stack.isEmpty());
     }
 }
