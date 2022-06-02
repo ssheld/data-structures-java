@@ -1,4 +1,4 @@
-package com.ssheld;
+package ssheld;
 
 /**
  * Linked list implementation of stack
