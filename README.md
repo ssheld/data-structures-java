@@ -5,3 +5,4 @@ This repository consists of various data structures implemented in Java. All dat
 - **myarraylist** - Array List implementation with dynamically resizing array.
 - **myarraystack** - Array List implementation of a stack utilizing a dynamically resizing array.
 - **myliststack** - Linked list implementation of a stack.
+- **mylistqueue** - Linked list implementation of FIFO queue.
