@@ -21,6 +21,7 @@
     <modules>
         <module>myarraylist</module>
         <module>myarraystack</module>
+        <module>myliststack</module>
     </modules>
 
 </project>
