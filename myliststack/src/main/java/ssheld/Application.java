@@ -1,4 +1,4 @@
-package com.ssheld;
+package ssheld;
 
 public class Application {
     
