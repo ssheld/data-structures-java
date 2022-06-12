@@ -6,3 +6,4 @@ This repository consists of various data structures implemented in Java. All dat
 - **myarraystack** - Array List implementation of a stack utilizing a dynamically resizing array.
 - **myliststack** - Linked list implementation of a stack.
 - **mylistqueue** - Linked list implementation of FIFO queue.
+- **mypq** - Priority queue implemented in heap-ordered complete binary tree.
