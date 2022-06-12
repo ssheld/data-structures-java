@@ -22,6 +22,7 @@
         <module>myarraylist</module>
         <module>myarraystack</module>
         <module>myliststack</module>
+        <module>mypq</module>
     </modules>
 
 </project>
