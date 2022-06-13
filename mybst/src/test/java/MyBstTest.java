@@ -67,4 +67,31 @@ public class MyBstTest {
     void getMax() {
         assertEquals(15, myBst.max());
     }
+
+    @Test
+    void getValue() {
+        assertEquals("John", myBst.get(10));
+    }
+
+    @Test
+    void select() {
+        assertEquals(5, myBst.select(2));
+    }
+
+    @Test
+    void rank() {
+        assertEquals(5, myBst.rank(10));
+    }
+
+    @Test
+    void delete() {
+        myBst.delete(2);
+        assertEquals(3, myBst.min());
+
+        myBst.delete(7);
+        assertEquals(3, myBst.min());
+
+        System.out.println("PreOrder post-delete");
+        myBst.preOrder();
+    }
 }
