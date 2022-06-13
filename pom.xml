@@ -23,6 +23,7 @@
         <module>myarraystack</module>
         <module>myliststack</module>
         <module>mypq</module>
+        <module>mybst</module>
     </modules>
 
 </project>
