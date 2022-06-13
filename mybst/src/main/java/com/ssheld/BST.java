@@ -225,6 +225,97 @@ public class BST <Key extends Comparable<Key>, Value> {
         }
 
         /**
+         * Returns the rank of a given key (number of keys less than Key
+         * in the tree).
+         */
+        public int rank(Key key) {
+            return rank(key, root);
+        }
+
+        /**
+         * Private overloaded rank method.
+         */
+        private int rank(Key key, Node x) {
+            if (x == null) {
+                return 0;
+            }
+
+            int cmp = key.compareTo(x.key);
+
+            if (cmp < 0) {
+                // Key is less than current key so move to left subtree
+                return rank(key, x.left);
+            } else if (cmp > 0) {
+                // Key is greater than current key so move to right subtree
+                return 1 + size(x.left) + rank(key, x.right);
+            } else {
+                return size(x.left);
+            }
+        }
+
+        /**
+         * Delete minimum key in BST.
+         */
+        public void deleteMin() {
+            if (isEmpty()) {
+                throw new NoSuchElementException();
+            }
+            root = deleteMin(root);
+        }
+
+        /**
+         * Overloaded deleteMin method.
+         */
+        private Node deleteMin(Node x) {
+            if (x.left == null) {
+                return x.right;
+            }
+
+            x.left = deleteMin(x.left);
+            x.n = size(x.left) + size(x.right) + 1;
+            return x;
+        }
+
+        /**
+         * Method to delete key/value pair from BST.
+         */
+        public void delete(Key key) {
+            root = delete(root, key);
+        }
+
+        /**
+         * Overloaded delete method
+         */
+        private Node delete(Node x, Key key) {
+            if (x == null) {
+                return null;
+            }
+
+            int cmp = key.compareTo(x.key);
+
+            if (cmp < 0) {
+                // Go left
+                x.left = delete(x.left, key);
+            } else if (cmp > 0) {
+                x.right = delete(x.right, key);
+            } else {
+                if (x.right == null) {
+                    return x.left;
+                } else if (x.left == null) {
+                    return x.right;
+                }
+
+                Node t = x;
+                x = min(x.right);
+                x.right = deleteMin(t.right);
+                x.left = t.left;
+            }
+
+            x.n = size(x.left) + size(x.right) + 1;
+            return x;
+        }
+
+        /**
          * Helper method to check if BST is empty.
          */
         public boolean isEmpty() {
